@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ensuring you read.</title>
   <link rel="stylesheet" href="style.css">
-  <audio id="song" autoplay>
+  <audio id="song">
     <source src="./bg.mp3" type="audio/mpeg">
-  </audio>
+  </audio>  
 </head>
 <body>
   <div class="container">
@@ -19,6 +19,13 @@
     <div id="message"></div>
   </div>
 
+  <script>
+    document.body.addEventListener('click', () => {
+      document.getElementById('song').play().catch(error => {
+        console.log('Autoplay failed:', error);
+      });
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
